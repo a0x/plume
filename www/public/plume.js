@@ -1,4 +1,4 @@
-/*
+/**
  * In this file of code, the author did three things:
  *   1. init the editor
  *   2. init the doc typed rich-text using sharejs
@@ -7,7 +7,7 @@
  *     3.2 cursor sync
  *
  * However, there is at least one thing to be done:
- *   to deal with the lock in `doc`.
+ *   * to deal with the lock in `doc`.
  *
  */
 
@@ -125,7 +125,7 @@ function hexToRgb(hex) {
 }
 
 
-/*
+/**
  * Questions:
  * 0. What is 'multi-cursor' module?
  * 1. What is Primus?
@@ -138,4 +138,17 @@ function hexToRgb(hex) {
  * 8. What's the error/bug inside this project?
  * 9. Can the order of these 6 events changed?
  * 10. How does Quill editor `updateContents()`?
+ */
+
+/**
+ * Sequences of apply rich-text ot:
+ * After initializing the editor and the doc:
+ * 1. track the cursor locally on each client
+ * 2. submitOp() when text changed
+ * 3. updateContents() when receive rich-text ops from remote
+ *
+ * Another work is to highlight text selection, and apply the
+ * rich-text style remotely, this feature need to operation:
+ * 1. regenerate(or move) the cursor remotely
+ * 2. apply the selected text style remotely
  */
